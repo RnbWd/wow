@@ -1,6 +1,6 @@
-name: Portfolio
+name: Such Weird
 baseurl: /portfolio
-url: http://rnbwd.github.io/portfolio
+url: http://rnbwd.github.io/wow
 permalink: /:year/:month/:day/:title 
 markdown: redcarpet  
 redcarpet:

@@ -1,7 +1,13 @@
 {% include head.html %}
   <div id="container">
+    <div class='doge-widget-wrapper doge'>
+      <form method='get' action='https://www.dogeapi.com/checkout'>
+        <input type='hidden' name='widget_type' value='donate'>
+        <input type='hidden' name='payment_address' value='D9yDyJhzHEdeghuL3A1vvEUgMfQnQvV6Gx'>
+        <div class='doge-widget' style='display:none;'></div>
+      </form>
+    </div>
     {{ content }}
   </div>
-  {% include disqus %}
 
 {% include foot.html %}

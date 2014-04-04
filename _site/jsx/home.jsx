@@ -20,8 +20,8 @@ var Alchemy = React.createClass({
     //this.forceUpdate();
     this.props.weird = this.refs.weird.getDOMNode();
     //triangle = this.refs.svg.getDOMNode();
-    //this.props.weird2 = this.refs.weird2.getDOMNode();
-    //this.props.weird3 = this.refs.weird3.getDOMNode();
+    this.props.confuse = this.refs.confuse.getDOMNode();
+    this.props.weird3 = this.refs.comp.getDOMNode();
 
     //this.props.weird4 = this.refs.weird4.getDOMNode();
     
@@ -43,6 +43,8 @@ var Alchemy = React.createClass({
   handleScroll: function(event) {
     var weird = this.props.weird;
     var self = this;
+    var confuse = this.props.confuse;
+    var comp = this.props.weird3;
     if (event) {
       if (event.deltaY){
       t1.push(event.deltaY);
@@ -55,20 +57,15 @@ var Alchemy = React.createClass({
       total = t1.reduce(function(a, b) {
         return a + b;
       });
-      if (total < 360 || total > 3599) {
-        t1 = [360, 0];
-        total = 360;
-       
-        self.setState({rotation: 0});
-      }
+      
       console.log(total);
       
       var doIt = function() {
         //ROTATION Z LOOKS COOL!
        // window.requestAnimationFrame(self.update);
-        var bannerTween = new TweenMax.to(weird, 60, {rotation: (total), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
-         //var bannerTween2 = new TweenMax.to(weird2, 60, {rotationY: (total+90), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
-          //var bannerTween3 = new TweenMax.to(weird3, 60, {rotationY: (total+180), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
+        var bannerTween = new TweenMax.to(weird, 60, {rotationY: (total), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
+        var bannerTween2 = new TweenMax.to(confuse, 60, {width: (total/3), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
+          var bannerTween3 = new TweenMax.to(comp, 60, {height: (total/6), rotationX: (-total), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
          //var bannerTween4 = new TweenMax.to(weird4, 60, {rotationY: (total+270), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
       }
       doIt();
@@ -98,38 +95,39 @@ var Alchemy = React.createClass({
     var right = rect.right;
     var middleW = rect.width/2;
     var middleH = rect.height/2;
-    var style = {background: '#B8BDB6',
-                 height: 401,
-                 position: 'absolute',
-                 top: 150, //(window.innerHeight - 361)/2,
-                 left: (window.innerWidth - 401)/2,
-                 width: 401, 
-                 paddingTop: 20,
+    var style = {
+                 
+                 
                  WebkitBackfaceVisibility:'hidden',
-                 overflow: 'hidden'
-                 //zIndex: 25,
-                 /*WebkitClipPath: 'polygon(\
-                  50% 20px, 80% 20px, 50% '+(middleH+25)+'px,\
-                  50% 90%, 100% 20px, 100% 50%,\
-                  75% 100%, 25% 100%, 0 50%, 0 20px,\
-                  50% 90%, 50% '+(middleH+25)+'px, 20% 20px\
-                )'*/
+                 overflow: 'hidden',
+                 zIndex: 25,
+                 WebkitClipPath: 'polygon(\
+                  50% 0, 80% 0, 50% 30%,\
+                  50% 90%, 100% 0, 100% 50%,\
+                  75% 100%, 25% 100%, 0 50%, 0 0,\
+                  50% 90%, 50% 30%, 20% 0\
+                )'
                 
                };
 
     return (
-      <div  className="weird" style={{height: window.innerHeight}} onWheel={this.handleScroll} onTouchMove={this.handleTouch}>
-        <div className="shibe hexa" ref='weird'>
+      <div  className="weird"  style={{height: window.innerHeight}} onWheel={this.handleScroll} onTouchMove={this.handleTouch}>
 
+        <div className="shibe" style={{position: 'fixed', zIndex: 35, textAlign: 'center', left: (window.innerWidth/2)-150}} ref='weird' >
+            <h1>Much Scroll</h1>
         </div>
-        
+        <div style={style} className="confuse" ref='confuse'>
+          
+        </div>
+        <img style={{height: 0, position: 'fixed', left: 0, top: 0,zIndex: 40, borderRadius: '50%'}} ref="comp" src="images/cs.jpg" />
       </div>
     )
   }
 });
 
 var awesome = React.renderComponent(
-  <Alchemy data={postsList} />, 
+  <Alchemy />, 
   document.getElementById('alchemy'));
+
 
 
