@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Alchemy</title>
+    <!--<link href="/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/css/custom.css.css">
+    <link rel="stylesheet" href="/css/highlight/xcode.css">
+
+    <script src="/js/react.js"></script>
+    <script src="/js/showdown.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/underscore.js"></script>
+     <script src="/js/marked.js"></script>
+     <script src="/js/highlight.pack.js"></script>
+   <script src="/js/raphael-min.js"></script> 
+   <script src="/js/raphael.export.js"></script> 
+
+    <script type="text/javascript" src="/js/backbone.js"></script>
+    <script type="text/javascript" src="/js/backbone.localStorage.js"></script>
+   <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+    <script>
+    var postsList = [];
+    var baseUrl = "";
+    marked.setOptions({
+    highlight: function (code) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    </script>
+    
+
+  <div id="container">
+      <div id="banner">
+    <div id="alchemy">
+        </div>
+  </div>
+
+
+
+  <div id="posts"></div>
+  <script src="/js/home.js"></script>
+  <script>
+ /* 
+  var banner = document.getElementById('banner');
+  var rect = banner.getBoundingClientRect();
+   var height = rect.height;
+    var width = rect.width;
+    var left = rect.left;
+    var middleW = rect.width/2;
+    var middleH = rect.height/2;
+  var paper = Raphael('alchemy');
+ // var c = paper.image("/images/fractal.jpg", 10, 10, 80, 80);
+  var triangle = paper.path("M"+middleW+","+(middleH-55)+"L"+(middleW-45*Math.sqrt(3))+","+(middleH+70)+"L"+(middleW+45*Math.sqrt(3))+","+(middleH+70)+"Z");
+
+  var pathSet = paper.set();
+  var circleSet = paper.set();
+  pathSet.push(
+    paper.path("M"+(middleW)+","+(middleH+25)+"L"+((middleW+45*Math.sqrt(3))-20)+","+(middleH-7)),
+    paper.path("M"+(middleW)+","+(middleH+25)+"L"+((middleW-45*Math.sqrt(3))+20)+","+(middleH-7)),
+    paper.path("M"+(middleW)+","+(middleH+25)+"L"+(middleW)+","+(middleH+94))
+  );
+  circleSet.push(
+     paper.circle(middleW+45*Math.sqrt(3), middleH-15, 20),
+     paper.circle(middleW-45*Math.sqrt(3), middleH-15, 20),
+     paper.circle(middleW, middleH+112, 20)
+  );
+  triangle.attr("stroke-width", 3).attr("stroke", "#2C3E50");
+  circleSet.attr("stroke-width", 3).attr("stroke", "#2C3E50").attr("fill", "lightgrey")
+  pathSet.attr("stroke-width", 3).attr("fill", "lightgrey").attr("stroke", "#2C3E50");
+
+  $(window).resize(function() {
+    var rect = banner.getBoundingClientRect();
+    paper.set(rect.width, rect.height);
+    console.log("size "+rect.width);
+  });
+  //console.log(paper);
+  var svg = paper.toSVG();
+  document.getElementById('alchemy').innerHTML = svg;
+ */
+  </script>
+
+
+<svg height="0">
+  <clipPath id="c1" clipPathUnits="objectBoundingBox">
+    <circle id="circl" cx="0.25" cy="0.25" r="0.25" />
+    <rect id="rect" x="0.5" y="0.2" width="0.5" height="0.8"/>
+  </clipPath>
+</svg>
+
+
+
+
+
+
+     
+  
+
+  </div>
+     <div id="disqus_thread" class="comments"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'codingalchemy'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+   
+
+  
+</body>
+</html>

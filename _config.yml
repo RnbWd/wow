@@ -1,0 +1,8 @@
+name: Portfolio
+baseurl: /portfolio
+url: http://rnbwd.github.io/portfolio
+permalink: /:year/:month/:day/:title 
+markdown: redcarpet  
+redcarpet:
+  extensions: ['fenced_code_blocks']
+

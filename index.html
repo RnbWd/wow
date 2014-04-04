@@ -1,0 +1,78 @@
+---
+layout: default
+title: Coding Alchemy
+---
+
+  <div id="banner">
+    <div id="alchemy">
+        </div>
+  </div>
+
+
+
+  <div id="posts"></div>
+  <script src="{{ site.baseurl }}/js/home.js"></script>
+  <script>
+ /* 
+  var banner = document.getElementById('banner');
+  var rect = banner.getBoundingClientRect();
+   var height = rect.height;
+    var width = rect.width;
+    var left = rect.left;
+    var middleW = rect.width/2;
+    var middleH = rect.height/2;
+  var paper = Raphael('alchemy');
+ // var c = paper.image("/images/fractal.jpg", 10, 10, 80, 80);
+  var triangle = paper.path("M"+middleW+","+(middleH-55)+"L"+(middleW-45*Math.sqrt(3))+","+(middleH+70)+"L"+(middleW+45*Math.sqrt(3))+","+(middleH+70)+"Z");
+
+  var pathSet = paper.set();
+  var circleSet = paper.set();
+  pathSet.push(
+    paper.path("M"+(middleW)+","+(middleH+25)+"L"+((middleW+45*Math.sqrt(3))-20)+","+(middleH-7)),
+    paper.path("M"+(middleW)+","+(middleH+25)+"L"+((middleW-45*Math.sqrt(3))+20)+","+(middleH-7)),
+    paper.path("M"+(middleW)+","+(middleH+25)+"L"+(middleW)+","+(middleH+94))
+  );
+  circleSet.push(
+     paper.circle(middleW+45*Math.sqrt(3), middleH-15, 20),
+     paper.circle(middleW-45*Math.sqrt(3), middleH-15, 20),
+     paper.circle(middleW, middleH+112, 20)
+  );
+  triangle.attr("stroke-width", 3).attr("stroke", "#2C3E50");
+  circleSet.attr("stroke-width", 3).attr("stroke", "#2C3E50").attr("fill", "lightgrey")
+  pathSet.attr("stroke-width", 3).attr("fill", "lightgrey").attr("stroke", "#2C3E50");
+
+  $(window).resize(function() {
+    var rect = banner.getBoundingClientRect();
+    paper.set(rect.width, rect.height);
+    console.log("size "+rect.width);
+  });
+  //console.log(paper);
+  var svg = paper.toSVG();
+  document.getElementById('alchemy').innerHTML = svg;
+ */
+  </script>
+
+{% for post in paginator.posts %}
+ <!-- <div class="postContent">
+    <div style="background: center url({{ site.baseurl }}{{ post.picture}}); width: 100%; height:200px;" class="penta"></div>
+    <p class="author">
+      <span class="date">{{ post.date | date_to_string }}</span>
+    </p>
+      <h4>{{ post.title }} </h4>
+      <p class="postit hexa"> {{ post.excerpt }}</p>  &raquo; <a href="{{ site.baseurl }}{{ post.url }}">read more</a>
+  </div>-->
+{% endfor %}
+<svg height="0">
+  <clipPath id="c1" clipPathUnits="objectBoundingBox">
+    <circle id="circl" cx="0.25" cy="0.25" r="0.25" />
+    <rect id="rect" x="0.5" y="0.2" width="0.5" height="0.8"/>
+  </clipPath>
+</svg>
+
+
+
+
+
+
+     
+  

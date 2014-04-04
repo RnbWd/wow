@@ -1,0 +1,59 @@
+
+
+<button id="linkRight" class="btn link" href="#"><span id="arrow" class="glyphicon glyphicon-chevron-left"></span></button>
+<!--<button id="linkLeft" class="btn link" href="#"><span id="arrow" class="glyphicon glyphicon-chevron-right"></span></button>-->
+
+<script>
+  var on = "off";
+  var tweenNav;
+  var tweenGlyph;
+  var tweenDelta;
+  var tweenBeta;
+  TweenLite.to('.on-page', 0.3, {boxShadow: "2px 2px 4px #888888", force3D: true, background: "#ECF0F1", ease: 'linear'});
+    $('#linkRight').on('click', function(e) { 
+      e.preventDefault();
+      if (on === "off") {
+        tweenNav = new TweenLite.to('#nav', 0.5, {left: '80%', autoAlpha:0.7, force3D: true});
+        tweenGlyph = new TweenLite.to('#linkRight', 0.5, {rotationY:180, force3D: true});
+        on = "on";
+      } else if (on === "on") {
+        tweenGlyph.reverse();
+        tweenNav.reverse();
+        on = "off";
+      }
+      console.log('clicked');
+    });
+    /*
+    $('#linkLeft').on('click', function(e) { 
+      e.preventDefault();
+      if (on === "off") {
+        tweenNav = new TweenLite.to('#top_nav', 0.5, {left: '20%', autoAlpha:0.7, force3D: true});
+        tweenGlyph = new TweenLite.to('#linkLeft', 0.5, {rotationY:180, force3D: true});
+        on = "on";
+      } else if (on === "on") {
+        tweenGlyph.reverse();
+        tweenNav.reverse();
+        on = "off";
+      }
+      console.log('clicked');
+    });
+
+  /*$('#top_nav').hover(function() {
+      tweenAlpha = new TweenLite.to('#top_nav', 0.3, {boxShadow: "4px 4px 4px #888888", force3D: true, });
+      console.log('in');
+    }, function() {
+      tweenAlpha.reverse();
+      console.log('out');
+    });
+*/
+  $('.link').hover(function() {
+      tweenBeta = new TweenLite.to($(this), 0.2, {autoAlpha: 1, force3D: true, });
+      console.log('in');
+    }, function() {
+      tweenBeta.reverse();
+      console.log('out');
+    });
+
+      
+    
+</script>

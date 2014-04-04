@@ -1,0 +1,35 @@
+{% include head.html %}
+    <a id="home" href="{{ site.baseurl }}/" >Home</a>
+
+    {% include left-nav.html %}
+    {% include nav.html %}
+
+    
+    
+    <div class="postContent" style="width: 90%; margin-left:5%; margin-right:5%">
+      <span class="date pull-left">Categories: {{ page.categories | array_to_sentence_string }}</span>
+      <h1>{{ page.title }}</h1>
+       <span class="date pull-left">Tags: {{ page.tags | array_to_sentence_string }}</span>
+      <span class="date pull-right">{{ page.date | date_to_string}}</span>
+      <br>
+      {{ content }}
+    </div>
+
+    {% include disqus %}
+
+    <ul class="pager">
+      {% if page.next %}
+      <li class="previous"><a href="{{ site.baseurl }}{{ page.next.url }}">&larr; {{ page.next.title }} </a></li>
+      {% endif %}
+
+      {% if page.previous %}
+      <li class="next"><a href="{{ site.baseurl }}{{ page.previous.url }}"> {{ page.previous.title }} &rarr;</a></li>
+      {% endif %}
+
+    </ul>
+    <!--
+    {% for post in site.related_posts %}
+      {{ post.title }}
+    {% endfor %}
+  -->
+{% include foot.html %}
