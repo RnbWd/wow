@@ -19,11 +19,15 @@ img {
   background: #E0E0E0; }
 
 .weird {
-  background: url("../images/1.jpg") fixed no-repeat;
-  background-size: cover;
-  height: 400px;
-  padding: 20px; }
-
+  background: lightgrey;
+  padding: 20px; 
+}
+.shibe {
+  background: url('../images/coin.png');
+  width: 50%;  
+  height: 50%;
+  margin: 15%;
+}
 .topTriangle {
   position: fixed;
   top: 0px;

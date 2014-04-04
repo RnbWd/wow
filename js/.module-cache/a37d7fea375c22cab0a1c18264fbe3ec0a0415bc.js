@@ -119,7 +119,7 @@ var Alchemy = React.createClass({displayName: 'Alchemy',
 
     return (
       React.DOM.div(  {className:"weird", style:{height: window.innerHeight}, onWheel:this.handleScroll, onTouchMove:this.handleTouch}, 
-        React.DOM.div( {className:"shibe hexa", ref:"weird"}
+        React.DOM.div( {className:"shibe", ref:"weird"}
 
         )
         

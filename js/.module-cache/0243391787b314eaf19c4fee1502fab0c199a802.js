@@ -66,12 +66,12 @@ var Alchemy = React.createClass({displayName: 'Alchemy',
       var doIt = function() {
         //ROTATION Z LOOKS COOL!
        // window.requestAnimationFrame(self.update);
-        var bannerTween = new TweenMax.to(weird, 60, {rotation: (total), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
+        var bannerTween = new TweenMax.to(weird, 60, {rotationY: (total), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, onComplete: snap(), useFrames: true});
          //var bannerTween2 = new TweenMax.to(weird2, 60, {rotationY: (total+90), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
           //var bannerTween3 = new TweenMax.to(weird3, 60, {rotationY: (total+180), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
          //var bannerTween4 = new TweenMax.to(weird4, 60, {rotationY: (total+270), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
       }
-      doIt();
+      //doIt();
       //weirdTween  = new TweenMax.to(triangle, 1, {rotation: (50+total), transformOrigin:"50% 50% -400px", transformPerspective:500, force3D: true, });
       //weirdTween50  = new TweenMax.to(tl, 1, {rotation: (360), transformOrigin:"100% 100% -400px", transformPerspective:500, force3D: true, });
      // weirdTween3  = new TweenMax.to(tr, 1, {rotation: (360),  transformOrigin:"0% 100% -400px", transformPerspective:500, force3D: true, });
@@ -118,10 +118,8 @@ var Alchemy = React.createClass({displayName: 'Alchemy',
                };
 
     return (
-      React.DOM.div(  {className:"weird", style:{height: window.innerHeight}, onWheel:this.handleScroll, onTouchMove:this.handleTouch}, 
-        React.DOM.div( {className:"shibe hexa", ref:"weird"}
-
-        )
+      React.DOM.div(  {className:"weird", style:{height: window.innerHeight}, onWheel:this.handleScroll, onTouchMove:this.handleTouch}
+        
         
       )
     )

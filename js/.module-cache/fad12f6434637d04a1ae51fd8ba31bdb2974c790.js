@@ -66,7 +66,7 @@ var Alchemy = React.createClass({displayName: 'Alchemy',
       var doIt = function() {
         //ROTATION Z LOOKS COOL!
        // window.requestAnimationFrame(self.update);
-        var bannerTween = new TweenMax.to(weird, 60, {rotation: (total), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
+        var bannerTween = new TweenMax.to(weird, 60, {rotationY: (total), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, onComplete: snap(), useFrames: true});
          //var bannerTween2 = new TweenMax.to(weird2, 60, {rotationY: (total+90), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
           //var bannerTween3 = new TweenMax.to(weird3, 60, {rotationY: (total+180), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
          //var bannerTween4 = new TweenMax.to(weird4, 60, {rotationY: (total+270), transformOrigin:"50% 50% -200px", transformPerspective:400, force3D: true, useFrames: true});
@@ -119,7 +119,7 @@ var Alchemy = React.createClass({displayName: 'Alchemy',
 
     return (
       React.DOM.div(  {className:"weird", style:{height: window.innerHeight}, onWheel:this.handleScroll, onTouchMove:this.handleTouch}, 
-        React.DOM.div( {className:"shibe hexa", ref:"weird"}
+        React.DOM.div( {className:"shibe", ref:"weird"}
 
         )
         
