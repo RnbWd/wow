@@ -1,0 +1,43 @@
+{% include head.html %}
+
+  
+    <script>
+    var title = "{{page.title}}";
+    </script>
+
+
+
+    <div class="full">
+
+        
+        <button id="linkLeft" class="btn link" href="#"><span id="arrow" class="glyphicon glyphicon-chevron-right"></span></button>
+
+
+          <div id="contentNav" class="list-group">
+          {% include edit.nav.html %}
+          </div>
+
+        {{ content }}
+        
+   </div>
+
+  <script>
+    var on = "off";
+    var tweenNav;
+    var tweenGlyph;
+    var editor;
+      $('#linkLeft').on('click', function(e) { 
+        e.preventDefault();
+        if (on === "off") {
+          tweenNav = new TweenLite.to('#contentNav', 0.5, {left: '2%', autoAlpha:0.7, force3D: true});
+          tweenGlyph = new TweenLite.to('#linkLeft', 0.5, {rotationY:180, force3D: true});
+          on = "on";
+        } else if (on === "on") {
+          tweenGlyph.reverse();
+          tweenNav.reverse();
+          on = "off";
+        }
+        console.log('clicked');
+      });
+    </script>
+{% include foot.html %}

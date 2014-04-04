@@ -1,0 +1,8 @@
+
+
+{% for post in site.posts %}
+    <a id='{{post}}' class="list-group-item" onClick="editPost(event, '{{post.path}}', '{{post.title}}')" href="#">{{ post.title }}</a>
+    
+{% endfor %}
+
+
