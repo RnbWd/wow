@@ -1,5 +1,5 @@
 name: Such Weird
-baseurl: /portfolio
+baseurl: /wow
 url: http://rnbwd.github.io/wow
 permalink: /:year/:month/:day/:title 
 markdown: redcarpet  
